@@ -41,13 +41,14 @@ const convert = (txt) => {
   let code = "";
   let arr = txt.split(" ");
   for (j = 0; j < arr.length; j++) {
-    message +=
-      String.fromCharCode(
-        65 +
-          morseConversion.findIndex((element) => {
-            return element === arr[j];
-          })
-      ) + " ";
+    let k = String.fromCharCode(
+      65 +
+        morseConversion.findIndex((element) => {
+          return element === arr[j];
+        })
+    );
+    if (k == "@") message += " ";
+    else message += k + " ";
     code = "";
   }
 };
