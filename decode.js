@@ -56,6 +56,7 @@ decodeBtn.addEventListener("click", (e) => {
   e.preventDefault();
   let morse = "";
   morse = inputText.value;
+  inputText.value="";
   convert(morse);
   outputText.value = message;
 });
